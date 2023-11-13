@@ -58,8 +58,12 @@ public class SinistroDAO {
 			ps.setDouble(1, cd);
 			ps.setString(2, s.getDtSinistro());
 			ps.setString(3, s.getDescricao());
-			ps.setInt(4, s.getCodSeguro());
-
+			if(s.getCodSeguro() == 0) {
+				ps.setInt(4, 484);
+			}
+			else {
+				ps.setInt(4, s.getCodSeguro());	
+			}						
 			ps.execute();
 
 		} catch (SQLException e) {

@@ -21,27 +21,11 @@ public class ClienteDAO {
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, c.getCpf());
-			ps.setString(2, c.getNome());
-			if (c.getSobreNome() != null) {
-				ps.setString(3, c.getSobreNome());
-			} else {
-				ps.setString(3, "fdc");
-			}
-			if (c.getEmailCliente() != null) {
-				ps.setString(4, c.getEmailCliente());
-			} else {
-				ps.setString(4, "fdc@");
-			}
-			if (c.getTelefoneCliente() != null) {
-				ps.setString(5, c.getTelefoneCliente());
-			} else {
-				ps.setString(5, "fdc123");
-			}
-			if (c.getCepCliente() != null) {
-				ps.setString(6, c.getCepCliente());
-			} else {
-				ps.setString(6, "fdc321");
-			}
+			ps.setString(2, c.getNome());			
+			ps.setString(3, c.getSobreNome());		
+			ps.setString(4, c.getEmailCliente());
+			ps.setString(5, c.getTelefoneCliente());	
+			ps.setString(6, c.getCepCliente());
 			ps.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();

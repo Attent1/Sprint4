@@ -24,12 +24,8 @@ public class BicicletaDAO {
 			ps.setString(2, b.getMarca());
 			ps.setDouble(3, b.getValor());
 			ps.setString(4, b.getModelo());
-			ps.setString(5, b.getNotaFiscal());
-			if(b.getCpfCliente() == null) {
-				ps.setString(6, "99527832560");
-			}else {
-			ps.setString(6, b.getCpfCliente());
-			}
+			ps.setString(5, b.getNotaFiscal());							
+			ps.setString(6, b.getCpfCliente());			
 			ps.setInt(7, 484);
 			ps.execute();
 		} catch (SQLException e) {
